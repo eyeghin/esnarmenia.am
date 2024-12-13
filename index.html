@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESN Armenia</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Navigation Styling */
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-armenia.html">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+    <header id="nav-container"></header>
+<script src="nav.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - ESN Armenia</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .color-bar {
+            height: 6px;
+            background: linear-gradient(to right, #2196f3, #e91e63, #4caf50, #ff9800, #9c27b0, #2196f3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 60px;
+        }
+
+        .video-section {
+            text-align: center;
+            padding: 30px;
+            background-color: #e6f7ff;
+        }
+
+        .carousel-section h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #0056b3;
+            margin: 20px 0;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 20px;
+            justify-content: center;
+        }
+
+        .carousel img {
+            max-height: 200px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel img:hover {
+            transform: scale(1.1);
+        }
+
+        .content-section {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: #010202;
+            margin-bottom: 20px;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .content-section p, .content-section ul {
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .content-section ul {
+            margin: 20px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .content-section .esn-logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 300px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+    <!-- Embedded Video Section -->
+    <section class="video-section">
+        <h2>WELCOME TO ERASMUS STUDENT NETWORK</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/WQ071yzhUxI?si=yYJUevZcfNjj73hN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="carousel-section">
+        <h2 class="blinking-heading">
+            <span class="rotating-globe">🌍</span> WE ARE EVERYWHERE <span class="rotating-globe">🌍</span>
+        </h2>
+        <div class="carousel">
+            <img src="ESN Armenia INT Events.jpg" alt="Gallery Image 1">
+            <img src="ESN ARMENIA EVENTS.jpg" alt="Gallery Image 2">
+            <img src="ESN 4.jpg" alt="Gallery Image 3">
+            <img src="ESN 5.jpg" alt="Gallery Image 4">
+        </div>
+    </section>
+    <!-- Content Section -->
+    <section class="content-section">
+        <h2>ERASMUS STUDENT NETWORK</h2>
+        <p>Erasmus Student Network (ESN) is one of the biggest student associations in Europe. It was born on the 16th October 1989 and legally registered in 1990 for supporting and developing student exchange.</p>
+        <p>We are present in more than 1000 Higher Education Institutions from over 40 countries. The network is constantly developing and expanding. We have around <strong>15,000</strong> active members that are in many sections supported by so-called buddies mainly taking care of international students. Thus, ESN involves around <strong>40,000</strong> young people offering its services to around <strong>350,000</strong> international students every year.</p>
+        <img src="ESN_full-logo-Satellite.png" alt="ESN Logo" class="esn-logo">
+
+        <h2 style="text-align: center;">AIMS AND PRINCIPLES</h2>
+        <ul>
+            <li><strong>Works in the interest of international students</strong></li>
+            <li>Improves the social and practical integration of international students</li>
+            <li>Represents the needs and rights of international students on various levels</li>
+            <li>Provides relevant information about mobility programmes</li>
+            <li>Motivates students to study abroad</li>
+            <li>Supports the reintegration of homecoming students</li>
+            <li>Contributes to the improvement and accessibility of student mobility</li>
+            <li>Values volunteering and active citizenship</li>
+        </ul>
+        <h2 style="text-align: center;">WHO ARE WE FOR?</h2>
+        <h3>Homecoming Students</h3>
+        <p>The students who are returning from an exchange are being supported in the reintegration process in their home countries by keeping contact with an international environment. Many local sections are set up by former exchange students, often because they have had good experiences from their exchange period or because they felt a lack of help during their exchange. They also understand better the issues and challenges in a foreign environment.</p>
+        <img src="ESN STUDENTS.jpeg" alt="ESN Logo" class="esn-logo">
+        <h3>Exchange Students</h3>
+        <p>However, the main focus of ESN is placed on current exchange students, who often face problems (and feel abandoned) in their new environments. Therefore, ESN offers help in the academic, social, and practical integration process. This is mainly done through activities in the local sections, which include cultural and social events such as trips to various places within the country, film nights, language projects, international food festivals, and last, but not least, parties. In addition to that, many sections have introduced mentor systems, which help the international students mainly in academic and practical integration.</p>
+
+        <p>ESN also provides relevant information and encourages future exchange students to gain international experience and gain relevant insight into different cultures.</p>
+    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+            </div>
+            <div class="footer-logos">
+                <img src="EU LOGO.png" alt="EU Logo">
+                <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Globe & Shining Star</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .blinking-heading {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #0056b3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .rotating-globe {
+            display: inline-block;
+            animation: rotate 3s linear infinite; /* Rotates the globe */
+        }
+
+        .shining-star {
+            display: inline-block;
+            animation: shine 1.5s infinite alternate; /* Makes the star glow */
+        }
+
+        /* Rotating animation */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Shining animation */
+        @keyframes shine {
+            0% {
+                text-shadow: 0 0 5px #ffdf00, 0 0 10px #ffbf00, 0 0 20px #ffbf00;
+                opacity: 1;
+            }
+            100% {
+                text-shadow: 0 0 20px #ffbf00, 0 0 30px #ffc700, 0 0 40px #ffc700;
+                opacity: 0.8;
+            }
+        }
+    </style>
+</head>

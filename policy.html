@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy - ESN Armenia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2196f3, #4caf50);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+        }
+
+        .policy-section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .policy-section h2 {
+            font-size: 2rem;
+            color: #2C2E83;
+            margin-bottom: 20px;
+        }
+
+        .policy-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .policy-card {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .policy-card h3 {
+            font-size: 1.5rem;
+            color: #4caf50;
+            margin-bottom: 10px;
+        }
+
+        .policy-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .principles-section {
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .principles-section h2 {
+            text-align: center;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        .principles-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+
+        .principles-section ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-armenia.html">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html" class="active">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <h1>ESN Armenia Policies</h1>
+            <p>We stand by the principles of inclusivity, transparency, and sustainability to support student mobility.</p>
+        </section>
+
+        <!-- Policy Section -->
+        <section class="policy-section">
+            <h2>Key Policies</h2>
+            <div class="policy-list">
+                <div class="policy-card">
+                    <h3>Inclusivity</h3>
+                    <p>Ensuring equal opportunities for all students to experience cultural exchange.</p>
+                </div>
+                <div class="policy-card">
+                    <h3>Sustainability</h3>
+                    <p>Encouraging environmentally friendly practices in all our activities.</p>
+                </div>
+                <div class="policy-card">
+                    <h3>Transparency</h3>
+                    <p>Maintaining open and honest communication at every level.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Principles Section -->
+        <section class="principles-section">
+            <h2>Our Principles</h2>
+            <ul>
+                <li>Support the social and practical integration of international students.</li>
+                <li>Provide relevant information about exchange programs and ESN resources.</li>
+                <li>Encourage returning students to share their experiences and enrich our community.</li>
+                <li>Advocate for student needs and expectations on local, national, and international platforms.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+            </div>
+            <div class="footer-logos">
+                <img src="EU LOGO.png" alt="EU Logo">
+                <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </footer>
+</html>

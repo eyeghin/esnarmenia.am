@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media & Blog - ESN Armenia</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu Styling */
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+            list-style: none;
+            z-index: 1000;
+            width: 200px;
+            border-radius: 5px;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 15px;
+            color: #333;
+            display: block;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f9f9f9;
+            color: #2196f3;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to right, #2196f3, #e91e63);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more-btn {
+            background: white;
+            color: #2196f3;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .read-more-btn:hover {
+            background: #f9f9f9;
+            color: #0056b3;
+        }
+
+        .blog-content {
+            display: none;
+            text-align: left;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .blog-content h3 {
+            font-size: 1.5rem;
+            color: #2C2E83;
+            margin-bottom: 10px;
+        }
+
+        .blog-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .media-section {
+            margin-top: 40px;
+        }
+
+        .media-section h2 {
+            font-size: 2rem;
+            color: #2C2E83;
+            margin-bottom: 20px;
+        }
+
+        .media-section .media-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .media-card {
+            flex: 1 1 calc(33.333% - 20px);
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .media-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .media-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .media-card-content {
+            padding: 15px;
+        }
+
+        .media-card-content h3 {
+            font-size: 1.2rem;
+            color: #0056b3;
+            margin-bottom: 10px;
+        }
+
+        .media-card-content p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .media-card-content a {
+            text-decoration: none;
+            color: #2196f3;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-armenia.html">What is ESN?</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html" class="active">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Read More -->
+        <section class="hero-section">
+            <h1>ESN’s General Assembly</h1>
+            <p>Held in the historical heart of democracy - Thessaloniki, Greece, November 2024</p>
+            <a href="#blog-content" class="read-more-btn" onclick="toggleBlog()">Read the Blog</a>
+        </section>
+
+        <!-- Blog Content -->
+        <div id="blog-content" class="blog-content">
+            <img src="ESN Armenia INT Events.jpg" alt="General Assembly in Greece">
+            <h3>ESN’s General Assembly gathers in Greece</h3>
+            <p>From November 21st to the 24th, 2024, the Erasmus Student Network (ESN) held its Autumn General Assembly in Thessaloniki, bringing together representatives from across Europe to shape the future of the organisation.</p>
+            <p>The Assembly discussed updates on ESN's new Long-term Strategy, approved ESN Khazar as a Candidate Section, and celebrated the 20th anniversary of the ESNcard. The Assembly emphasized inclusivity, transparency, and collaboration.</p>
+            <p>Volunteers engaged in thought-provoking discussions on improving internal communication, fostering cultural exchange, and supporting international mobility.</p>
+            <p>The event was made possible by the collaboration of ESN Thessaloniki and the universities in the city, highlighting the impact of student associations.</p>
+        </div>
+
+        <!-- Media Section -->
+        <section class="media-section">
+            <h2>Media Highlights</h2>
+            <div class="media-cards">
+                <div class="media-card">
+                    <img src="nensi.jpeg" alt="Event 1">
+                    <div class="media-card-content">
+                        <h3>Event Highlights</h3>
+                        <p>Catch a glimpse of recent activities and events in Armenia.</p>
+                        <a href="https://www.instagram.com/esn.armenia/">View More</a>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <img src="event 2.jpeg" alt="Event 2">
+                    <div class="media-card-content">
+                        <h3>Global ESN Activities in Armenia</h3>
+                        <p>Explore how ESN connects students globally through cultural exchanges.</p>
+                        <a href="https://www.instagram.com/esn.yerevan/">View on Instagram</a>
+                    </div>
+                </div>
+                <div class="media-card">
+                    <img src="event 3.jpeg" alt="Event 3">
+                    <div class="media-card-content">
+                        <h3>International Gatherings</h3>
+                        <p>Join us in celebrating the diversity of students around the world.</p>
+                        <a href="https://www.instagram.com/esn.armenia/">Follow Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+            </div>
+            <div class="footer-logos">
+                <img src="EU LOGO.png" alt="EU Logo">
+                <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </footer>
+    <script>
+        function toggleBlog() {
+            const blogContent = document.getElementById('blog-content');
+            blogContent.style.display = blogContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Students - ESN Armenia</title>
+    <style>
+       body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 800px;
+            margin: 20px auto;
+            position: relative; 
+            overflow: hidden; 
+        }
+
+        .blog-post {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-family: 'Comic Sans MS', cursive;
+            color: #ff9800;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .blog-meta {
+            text-align: center;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+        }
+
+        .blog-content img {
+            display: block;
+            max-width: 80%;
+            margin: 20px auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .read-more-btn, .close-btn {
+            display: inline-block;
+            margin: 20px auto;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .read-more-btn:hover, .close-btn:hover {
+            background: #45a049;
+        }
+
+        .hidden-content {
+            display: none;
+        }
+
+        .emoji-decor {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .emoji-decor span {
+            font-size: 1.5rem;
+        }
+
+        .ebook-section {
+            margin: 40px auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ebook-section iframe {
+            width: 80%;
+            height: 500px;
+            border: none;
+            outline: none;
+        }
+
+        .ebook-section a {
+            display: inline-block;
+            margin-top: 20px;
+            background: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .ebook-section a:hover {
+            background: #45a049;
+        }
+
+        .plane {
+            position: absolute;
+            font-size: 2rem;
+            animation: movePlane 10s linear infinite;
+        }
+
+        
+        .plane:nth-child(1) {
+            top: 10%;
+            animation-delay: 0s;
+        }
+
+        .plane:nth-child(2) {
+            top: 25%;
+            animation-delay: 2s;
+        }
+
+        .plane:nth-child(3) {
+            top: 40%;
+            animation-delay: 4s;
+        }
+
+        .plane:nth-child(4) {
+            top: 55%;
+            animation-delay: 6s;
+        }
+
+        .plane:nth-child(5) {
+            top: 70%;
+            animation-delay: 8s;
+        }
+
+        @keyframes movePlane {
+            0% {
+                left: 100%; 
+                transform: rotate(0deg); 
+            }
+            50% {
+                transform: rotate(-10deg); 
+            }
+            100% {
+                left: -10%; 
+                transform: rotate(0deg); 
+            }
+        }
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+        .plane-icon {
+            font-size: 2rem;
+            position: absolute;
+            left: -50px;
+            top: 0;
+            animation: movePlane 5s linear infinite;
+        }
+
+        .plane-icon {
+            font-size: 2rem;
+            position: absolute;
+            top: -20px;
+            left: -50px;
+            animation: movePlane 5s linear infinite;
+        }
+
+        @keyframes movePlane {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(120%);
+            }
+        }
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-armenia.html">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html" class="active">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    
+        
+        <header id="nav-container"></header>
+    <script src="nav.js"></script>
+    
+    <main>
+        <!-- Blog Post Section -->
+        <div class="blog-post">
+            <span class="plane-icon">✈</span>
+            <div class="emoji-decor">
+                <span>☁</span>
+                <span>✈</span>
+                <span>🌍</span>
+            </div>
+            <h1 class="blog-title">Mov'in Europe</h1>
+            <p class="blog-meta">Written by Marina | Reading time: 4 minutes</p>
+            <div class="blog-content">
+                <p>It was September 2016, my very first day of university, and I felt a mix of anxiety and excitement that has since then accompanied me in all important beginnings. Anticipation was in the air, for the courses to come, the friends to meet and the huge amount of activities on display for students to sign up for. ‘I really want to sign up for English classes, so I can go on Erasmus’, said the girl sitting next to me at the opening lecture.</p>
+
+                <div class="emoji-decor">
+                    <span>☁</span>
+                    <span>✈</span>
+                    <span>🌍</span>
+                </div>
+
+                <img src="esn blog 3.png" alt="Marina and friends in Nottingham">
+
+                <p>I had heard of Erasmus before but I guess it wasn’t until that moment that I realised the level of preparation required to go on an Erasmus+ exchange. You had to speak a foreign language, think about possible destinations, budget and be ready to leave everything behind for at least six months.</p>
+
+                <button class="read-more-btn" onclick="toggleContent()">Read More</button>
+
+                <div id="hidden-content" class="hidden-content">
+                    <p>Two years later, I was on a plane to East Midlands Airport travelling towards my first ever Erasmus destination. Nottingham greeted me with a blue sky and, at the time, that’s all I needed to feel instantly at home. I quickly became familiar with the city’s brick buildings, and its narrow cobbled streets became the backdrop to one of the most transformative chapters in my life. I made friends from all over the world. We bonded over being away from home and a shared love for vintage shopping and improvised plans.</p>
+
+                    <img src="esn blog pic 1.png" alt="Marina and friends at a bonfire">
+
+                    <p>One night, towards the end of the semester, we were sitting in our common living room eating chocolate-coated pretzels and reflecting on all the experiences we had made together and the plans we wanted to do next. ‘Maybe an Erasmus Mundus Masters’, said my friend Hannah. Looking back, it shocks me how much influence a small comment that would otherwise get lost in conversation can have. Back in Madrid, feeling nostalgic about the time spent in the UK, I opened my laptop and typed the words “Erasmus Mundus” in the search bar.</p>
+
+                    <img src="esn blog pic 2.png" alt="Marina and colleagues at ESN">
+
+                    <p>In my role as Communications Assistant, I also learned that communication transcends language. People in ESN are mostly connected through fun times, shared international experiences and the sense of community that comes with leaving the familiar behind.</p>
+                    <div class="emoji-decor">
+                        <span>☁</span>
+                        <span>✈</span>
+                        <span>🌍</span>
+                    </div>
+                    <p>I am writing this blog article during my last days in the position, hoping it will inspire someone to take the leap and embrace the nerves and discomfort that come with leaving home for any international opportunity. I would have never done it if I hadn’t heard other people’s experiences, so hopefully my own experience will do the same for you.
+
+                        <div class="emoji-decor">
+                            <span>☁</span>
+                            <span>✈</span>
+                            <span>🌍</span>
+                        </div>
+
+                        They say that sometimes you win and sometimes you learn but I think that, if you're lucky, both things can happen at the same time. For me, every international experience was a victory over fear, and the limitations of my own worldview. And each was a lesson—about resilience, empathy and other people. I left, and I learned. </p>
+                    <button class="close-btn" onclick="toggleContent()">Close</button>
+                </div>
+            </div>
+        </div>
+
+        
+        <section class="ebook-section">
+            <iframe src="erasmus_e-book.pdf" title="Erasmus E-Book"></iframe>
+            <a href="erasmus_e-book.pdf" target="_blank">Download E-Book</a>
+        </section>
+    </main>
+
+    <script>
+        function toggleContent() {
+            const hiddenContent = document.getElementById('hidden-content');
+            hiddenContent.style.display = hiddenContent.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>
+<footer>
+    <div class="footer-container">
+        <div class="footer-text">
+            <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+        </div>
+        <div class="footer-logos">
+            <img src="EU LOGO.png" alt="EU Logo">
+            <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+    </div>
+</footer>
