@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESN Discounts - ESN Armenia</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header and Navigation */
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #2196f3;
+            color: white;
+        }
+
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            width: 200px;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            display: block;
+            color: #333;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .color-bar {
+            height: 6px;
+            background: linear-gradient(to right, #2196f3, #e91e63, #4caf50, #ff9800, #9c27b0, #2196f3);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #2196f3;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        /* Discounts Section */
+        .discounts-container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .discount-section {
+            margin-bottom: 40px;
+        }
+
+        .discount-section h2 {
+            font-size: 1.8rem;
+            color: #2C2E83;
+        }
+
+        .offers-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .offer-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-card img {
+            max-width: 80px;
+            margin-bottom: 15px;
+        }
+
+        .offer-card h3 {
+            font-size: 1.2rem;
+            color: #2C2E83;
+            margin-bottom: 10px;
+        }
+
+        .offer-card p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .offer-card a {
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #2196f3;
+            text-decoration: none;
+        }
+
+        .offer-card a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-section h2 {
+            color: #ff9800;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-section p {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .emoji-decor {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="color-bar"></div>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="what-is-esn.html">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html" class="active">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html"class="active">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search discounts...">
+        <button>Search</button>
+    </div>
+
+    <div class="discounts-container">
+        <div class="discount-section">
+            <h2>Travel Discounts</h2>
+            <div class="offers-container">
+                <div class="offer-card">
+                    <img src="flixbus.png" alt="FlixBus">
+                    <h3>FlixBus and FlixTrain</h3>
+                    <p>Green and smart mobility to experience the world.</p>
+                    <a href="https://esncard.org/flixbus">View Details</a>
+                </div>
+                <div class="offer-card">
+                    <img src="rynair.avif" alt="Ryanair">
+                    <h3>Ryanair</h3>
+                    <p>10% DISCOUNT in 4 single flights + FREE LUGGAGE with your ESNcard!</p>
+                    <a href="https://esncard.org/ryanair">View Details</a>
+                </div>
+                <div class="offer-card">
+                    <img src="shedcoliving.svg" alt="Eurail">
+                    <h3>Eurail</h3>
+                    <p>50 EUR off from the 1st month rent at SHED Co-living </p>
+                    <a href="https://esncard.org/discount/shed-co-living-dicount">View Details</a>
+                </div>
+            </div>
+        </div>
+        <section class="highlight-section">
+            <h2>More Discounts Await!</h2>
+            <p>
+                Unleash a world of incredible savings with the <a href="https://esncard.org/" target="_blank" style="color: #0056b3; text-decoration: underline;">ESNcard</a>. 
+                Travel, dine, and explore like never before while enjoying exclusive discounts curated for you!
+            </p>
+            <div class="emoji-decor">
+                <span>✨</span>
+                <span>💸</span>
+                <span>🛫</span>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="footer-text">
+                    <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+                </div>
+                <div class="footer-logos">
+                    <img src="EU LOGO.png" alt="EU Logo">
+                    <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+            </div>
+        </footer>
+        

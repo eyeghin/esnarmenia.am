@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+         /* General Styling */
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Navigation Styling */
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        /* Dropdown Menu */
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+        .video-section {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .video-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .video-item {
+            flex: 1;
+            text-align: center;
+            background: #f9f9f9;
+            padding: 0;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 300px; /* Taller video dimensions */
+            border: none;
+        }
+
+        .video-item h3 {
+            margin: 15px 0 10px;
+            color: #0056b3;
+        }
+
+        .video-item p {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .numbers-section {
+            background: #e6f7ff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .numbers-section h2 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        .numbers-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .number-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 200px;
+            flex: 1;
+        }
+
+        .number-item h3 {
+            font-size: 2.5rem;
+            color: #4caf50;
+            margin: 0;
+            animation: rotateNumbers 3s linear infinite;
+        }
+
+        .number-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        @keyframes rotateNumbers {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .welcome-section {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .welcome-title {
+            font-size: 4rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .red-text {
+            color: #e53935;
+        }
+
+        .blue-text {
+            color: #1e88e5;
+        }
+
+        .orange-text {
+            color: #f57c00;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .mission-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .mission-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .mission-point {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .mission-point h3 {
+            color: #0a11ec;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .mission-point p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        .group-photo {
+            margin: 40px auto;
+            max-width: 80%;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Emoji Decorations */
+        .emoji-decor {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .emoji {
+            font-size: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .cta-container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            text-decoration: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background: #e53935;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: #d32f2f;
+            transform: scale(1.1);
+        }
+
+        .cta-outline {
+            background: none;
+            color: #e53935;
+            border: 2px solid #e53935;
+            padding: 15px 30px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .cta-outline:hover {
+            background: #e53935;
+            color: white;
+        }
+/* Welcome Section */
+.video-section {
+  text-align: center;
+  margin-top: 40px;
+  padding: 40px 20px;
+  background: linear-gradient(145deg, #00284e, #001b33); 
+  border-radius: 15px;
+}
+
+.video-section h2 {
+  color: #ffdd00;
+  font-size: 24px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+  grid-gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-item {
+  position: relative;
+  padding-top: 177.78%;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: #001b33;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ffdd00; 
+}
+
+.video-item iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px; 
+  transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.video-item:hover iframe {
+  transform: scale(1.02); 
+}
+.volunteer-form {
+  background-color: #003366;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+    </style>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN ARMENIA FULL LOGO FINAL.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-armenia.html" class="active">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    
+    <header id="nav-container"></header>
+<script src="nav.js"></script>
+<main>
+   
+    <main>
+        <div class="welcome-section">
+            <h1 class="welcome-title">
+                <span class="red-text">WELCOME TO</span><br>
+                <span class="blue-text">ERASMUS STUDENT NETWORK</span><br>
+                <span class="orange-text">ARMENIA</span>
+            </h1>
+            <p class="subtitle">
+                Discover a vibrant community that fosters inclusivity, cultural exchange, and unforgettable experiences. <br>
+                Your journey with ESN Armenia starts here!
+            </p>
+        </div>
+ <!-- Interactive Emoji Decorations -->
+ <div class="emoji-decor">
+    <span class="emoji emoji-bounce">✈️</span>
+    <span class="emoji emoji-spin">🌍</span>
+    <span class="emoji emoji-glow">🔥</span>
+</div>
+        <!-- Group Photo Section -->
+        <div class="group-photo">
+            <img src="CUTESN.jpeg" alt="ESN Armenia Group" style="width: 100%; border-radius: 15px;">
+        </div>
+
+        <!-- Mission Section -->
+<!-- Mission Section -->
+<section class="mission-section">
+    <h2 class="welcome-title" style="color: #e53935;">Our Mission</h2>
+    <div class="mission-points">
+        <div class="mission-point">
+            <h3 style="color: #e53935;">Empowering Exchange Students</h3>
+            <p>
+                We guide students through their academic journey in Armenia, ensuring a smooth transition and a rewarding experience.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #1e88e5;">Cultural Immersion</h3>
+            <p>
+                ESN Armenia creates opportunities to explore the beauty of Armenia, from its rich history to its stunning landscapes.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #f57c00;">Global Connections</h3>
+            <p>
+                Join a network of like-minded individuals, engage in diverse events, and build international friendships.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Vision Section -->
+<section class="mission-section">
+    <h2 class="welcome-title" style="color: #1e88e5;">Our Vision</h2>
+    <div class="mission-points">
+        <div class="mission-point">
+            <h3 style="color: #e53935;">Creating Inclusive Communities</h3>
+            <p>
+                Our vision is to build a world where all exchange students feel at home, fostering a sense of belonging and inclusivity.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #1e88e5;">Promoting Cultural Understanding</h3>
+            <p>
+                By encouraging intercultural dialogues, we strive to create deeper mutual respect and understanding across nations.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #f57c00;">Empowering Leaders</h3>
+            <p>
+                Through leadership programs and activities, we prepare students to become global citizens and change-makers.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Values Section -->
+<section class="mission-section">
+    <h2 class="welcome-title" style="color: #f57c00;">Our Values</h2>
+    <div class="mission-points">
+        <div class="mission-point">
+            <h3 style="color: #e53935;">Collaboration</h3>
+            <p>
+                Working together with students, universities, and partners, we create impactful programs and initiatives.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #1e88e5;">Excellence</h3>
+            <p>
+                We strive for the highest quality in everything we do, setting benchmarks for student networks worldwide.
+            </p>
+        </div>
+        <div class="mission-point">
+            <h3 style="color: #f57c00;">Passion</h3>
+            <p>
+                Our work is fueled by the passion to make a difference in the lives of exchange students and local communities.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Explore Section -->
+<section class="mission-section" style="text-align: center; margin-top: 50px;">
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #e53935;">ERASMUS</h2>
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #1e88e5;">STUDENT NETWORK</h2>
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #f57c00;">ARMENIA</h2>
+</section>
+
+    </main>
+    <div class="cta-container">
+        <a href="about.html" class="cta-button">Learn More</a>
+        <a href="projects.html" class="cta-button cta-outline">Our Projects</a>
+    </div>
+</section>
+</main>
+    
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <!-- Explore Section -->
+<section class="mission-section" style="text-align: center; margin-top: 50px;">
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #e53935;">Explore</h2>
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #1e88e5;">Our</h2>
+    <h2 class="welcome-title" style="display: inline-block; margin: 0 10px; color: #f57c00;">Activities</h2>
+</section>
+
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe src="esna rmenia vid 1.mp4" title="Video 1" allowfullscreen></iframe>
+                    <h3>Exploring Opportunities</h3>
+                    <p>Learn how Erasmus+ can open doors to education and travel across Europe.</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="esn arm vid 2.mp4" title="Video 2" allowfullscreen></iframe>
+                    <h3>Cultural Exchange</h3>
+                    <p>Experience the vibrant cultural diversity through our Erasmus+ programs.</p>
+                </div>
+                <div class="video-item">
+                    <iframe src="esn arm vid 3.mp4" title="Video 3" allowfullscreen></iframe>
+                    <h3>Building Connections</h3>
+                    <p>Meet amazing people and create lasting memories during your exchange journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Numbers Section -->
+        <section class="numbers-section">
+            <h2>ESN Armenia in Numbers</h2>
+            <div class="numbers-grid">
+                <div class="number-item">
+                    <h3>71</h3>
+                    <p>Members and Volunteers</p>
+                </div>
+                <div class="number-item">
+                    <h3>51</h3>
+                    <p>International Students</p>
+                </div>
+                <div class="number-item">
+                    <h3>60</h3>
+                    <p>ESN Cards Issued</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="buddy-system-section">
+        <h2 class="headline">Hey Buddy, Need a Buddy?</h2>
+        <div class="buddy-intro">
+            <p>
+                The <strong>Buddy System</strong> is a program designed to connect international students with local students who act as their "buddies."
+                It's the perfect way to make new friends, adapt to a new environment, and experience cultural exchange while feeling supported.
+            </p>
+            <p>
+                Whether you're looking for guidance, help settling in, or someone to explore your new surroundings with, the Buddy System is here for you.
+            </p>
+        </div>
+        <div class="buddy-image">
+            <img src="HEY BUDDY .png" alt="Buddy System Illustration">
+        </div>
+        <div class="buddy-details">
+            <div class="buddy-item">
+                <h3>What is a Buddy?</h3>
+                <p>
+                    Your "buddy" is a local student who can help you navigate life in a new country, from understanding the culture and language
+                    to finding essential services like banks, grocery stores, and transportation. They may even invite you to local events and
+                    introduce you to their social circles.
+                </p>
+            </div>
+            <div class="buddy-item">
+                <h3>Cultural Exchange</h3>
+                <p>
+                    The Buddy System is more than practical assistance. It's an opportunity for cultural exchange, fostering meaningful
+                    connections, and learning from one another's experiences. Both you and your buddy will gain a broader perspective on life and culture.
+                </p>
+            </div>
+            <div class="buddy-item">
+                <h3>How It Works</h3>
+                <p>
+                    Sign up through this <a href="https://docs.google.com/forms/d/1cO1ZYBOwYjYE0tWw4KCjuzLJ9Ha_2dvYq7hG9bt_X5g/viewform?ts=66b33bf1&edit_requested=true" target="_blank">form</a> with your preferences and interests. You'll be matched with a local student
+                    based on shared hobbies, academic background, or personal preferences. Once paired, you'll start your journey together.
+                </p>
+            </div>
+        </div>
+        <section class="partners-section">
+            <h2 class="partners-title">
+                CHECK OUT THE AMAZING DISCOUNTS 
+                <span class="blinking-emoji">✨😄✨</span>
+            </h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <img src="IBISLOGO.jpeg" alt="Partner 1 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">10% off</h3>
+                        <p class="partner-description">Discount on full menu</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Explore More</a>
+                </div>
+                <div class="partner-card">
+                    <img src="YELLPARKLOGO.jpeg" alt="Partner 2 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">15% off</h3>
+                        <p class="partner-description">Discount on speaking courses</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Explore More</a>
+                </div>
+               
+                <div class="partner-card">
+                    <img src="UFO LOGO.avif" alt="Partner 3 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">20% off</h3>
+                        <p class="partner-description">Discount on electronics</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Explore More</a>
+                </div>
+           
+                <div class="partner-card">
+                    <img src="APAGA RESORT ARMENIA.jpeg" alt="Partner 4 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">Free Coffee</h3>
+                        <p class="partner-description">One free coffee with purchase</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Find Out More</a>
+                </div>
+              
+                <div class="partner-card">
+                    <img src="" alt="Partner 5 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">5% off</h3>
+                        <p class="partner-description">Clothing and accessories</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Find Out More</a>
+                </div>
+         
+                <div class="partner-card">
+                    <img src="AVOCADO LOGO.png" alt="Partner 6 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">Special Offer</h3>
+                        <p class="partner-description">Exclusive deals on fitness</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Explore More</a>
+                </div>
+           
+                <div class="partner-card">
+                    <img src="COWO LOGO.jpg" alt="Partner 7 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">Discount</h3>
+                        <p class="partner-description">Membership benefits</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Find Out More</a>
+                </div>
+           
+                <div class="partner-card">
+                    <img src="GYUR SERVICE ARM LOGO.jpeg" alt="Partner 8 Logo" class="partner-logo">
+                    <div class="partner-details">
+                        <h3 class="partner-discount">Up to 30% off</h3>
+                        <p class="partner-description">Travel and hotel stays</p>
+                    </div>
+                    <a href="https://accounts.esn.org/country/am" target="_blank" class="explore-link">Explore More</a>
+                </div>
+
+        </section>
+        
+        <style>
+            /* Partners Section Styling */
+            .partners-section {
+                background: #f3f8ff;
+                padding: 60px 20px;
+                text-align: center;
+                border-radius: 15px;
+                margin: 40px auto;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+        
+            .partners-title {
+                color: #0056b3;
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin-bottom: 30px;
+            }
+        
+            .blinking-emoji {
+                animation: blink 1s infinite;
+            }
+        
+            @keyframes blink {
+                50% {
+                    opacity: 0.5;
+                }
+            }
+        
+            .partners-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        
+            .partner-card {
+                background: white;
+                border-radius: 15px;
+                text-align: center;
+                padding: 20px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+        
+            .partner-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            }
+        
+            .partner-logo {
+                max-width: 100px;
+                margin: 0 auto 15px;
+            }
+        
+            .partner-discount {
+                color: #ff4081;
+                font-size: 1.5rem;
+                margin: 10px 0;
+            }
+        
+            .partner-description {
+                color: #555;
+                font-size: 1rem;
+                margin-bottom: 15px;
+            }
+        
+            .explore-link {
+                display: inline-block;
+                background: #0056b3;
+                color: white;
+                padding: 10px 20px;
+                font-weight: bold;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background 0.3s;
+            }
+            footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 30px;
+        }
+
+        footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer .footer-text {
+            flex: 1 1 50%;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        footer .footer-text p {
+            margin: 5px 0;
+        }
+
+        footer .footer-logos img {
+            max-width: 120px;
+            height: auto;
+        }
+
+        footer .footer-bottom {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        footer .footer-bottom a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer .footer-bottom a:hover {
+            text-decoration: underline;
+        }
+            .explore-link:hover {
+                background: #003f87;
+            }
+        </style>
+    <style>
+        .buddy-system-section {
+            background: #f0f8ff;
+            padding: 40px 20px;
+            text-align: center;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .headline {
+            font-size: 2.5rem;
+            color: #ff9800; /* Bright orange */
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+        }
+    
+        .buddy-intro {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #333;
+        }
+    
+        .buddy-intro strong {
+            color: #2196f3; /* Bright blue */
+        }
+    
+        .buddy-image {
+            margin: 30px 0;
+        }
+    
+        .buddy-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        .buddy-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            text-align: left;
+        }
+    
+        .buddy-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    
+        .buddy-item h3 {
+            font-size: 1.5rem;
+            color: #2196f3;
+            margin-bottom: 10px;
+        }
+    
+        .buddy-item p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+    
+        .buddy-item a {
+            color: #ff5722;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    
+        .buddy-item a:hover {
+            text-decoration: underline;
+        }
+    /* Partners Section Styling */
+    .partners-section {
+        background: #4a148c; /* Purple background */
+        padding: 50px 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin: 40px auto;
+    }
+
+    .partners-title {
+        color: #fff;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+
+    .partners-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .partner-card {
+        background: #fff;
+        border-radius: 10px;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .partner-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .partner-card img {
+        max-width: 80px;
+        margin: 0 auto 15px;
+    }
+
+    .partner-offer {
+        background: #ff4081; /* Pink offer label */
+        color: #fff;
+        font-size: 1.2rem;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    .partner-offer p {
+        font-size: 1rem;
+        margin: 5px 0 0;
+    }
+
+    .find-more {
+        display: inline-block;
+        background: #4a148c;
+        color: #fff;
+        padding: 10px 20px;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .find-more:hover {
+        background: #6a1b9a;
+    }
+
+    .external-link-icon::before {
+        content: "\2197"; /* Unicode for external link icon */
+        margin-left: 5px;
+        
+    }
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .blinking-emoji {
+        display: inline-block;
+        font-size: 1.5rem;
+        animation: blink 1s infinite;
+        margin-left: 10px;
+    }
+</style>
+    </style>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>ESN is an independent, non-partisan, non-political, and non-profit international association operating under Belgian law. Supported by Erasmus+ and the Council of Europe.</p>
+            </div>
+            <div class="footer-logos">
+                <img src="EU LOGO.png" alt="EU Logo">
+                <img src="ESN_full-logo-Satellite.png" alt="EYF Logo">
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+        </div>
+    </footer>
