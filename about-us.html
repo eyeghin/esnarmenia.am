@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ESN Armenia</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header Navigation Styling */
+        header {
+            background: white;
+            border-bottom: 2px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header-logo img {
+            max-height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            position: relative;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            display: block;
+            transition: all 0.3s;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            background-color: #2196f3;
+            color: white;
+            border-radius: 5px;
+        }
+
+        nav ul li ul.dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        nav ul li:hover ul.dropdown-menu {
+            display: block;
+        }
+
+        nav ul li ul.dropdown-menu li {
+            margin: 0;
+        }
+
+        nav ul li ul.dropdown-menu li a {
+            padding: 10px 20px;
+            color: #333;
+            font-size: 0.9rem;
+        }
+
+        nav ul li ul.dropdown-menu li a:hover {
+            background-color: #f0f0f0;
+        }
+
+        main {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        h1, h2 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .country {
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .country img {
+            width: 100%;
+            max-width: 100px;
+            margin: 0 auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .country span {
+            display: block;
+            font-size: 1rem;
+            color: #333;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .country:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .see-more-btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .see-more-btn button {
+            padding: 10px 20px;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .see-more-btn button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="header-logo">
+                <img src="ESN_full-logo-Satellite.png" alt="ESN Armenia Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li class="dropdown">
+                        <a href="about.html">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li><a href="what-is-esn.html">ESN Armenia</a></li>
+                            <li><a href="the-team.html">The Team</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="for-students.html">For Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="esn-discounts.html">ESN Discounts</a></li>
+                            <li><a href="opportunities.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="media.html">Media</a></li>
+                    <li><a href="policy.html">Policy</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="dropdown">
+                        <a href="contacts.html">Contacts</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="contact-us.html">Contact Us</a></li>
+                            <li><a href="esn-card.html">ESN Card</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>About ESN Armenia</h1>
+        <section>
+            <h2>ESN Network Across the World</h2>
+            <div class="countries-grid" id="countries">
+                <!-- Initial 20 countries -->
+                <div class="country"><img src="https://flagcdn.com/w320/al.png" alt="Flag of Albania"><span>ESN Albania</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/am.png" alt="Flag of Armenia"><span>ESN Armenia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/at.png" alt="Flag of Austria"><span>ESN Austria</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/az.png" alt="Flag of Azerbaijan"><span>ESN Azerbaijan</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/be.png" alt="Flag of Belgium"><span>ESN Belgium</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ba.png" alt="Flag of Bosnia"><span>ESN Bosnia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/bg.png" alt="Flag of Bulgaria"><span>ESN Bulgaria</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/hr.png" alt="Flag of Croatia"><span>ESN Croatia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/cy.png" alt="Flag of Cyprus"><span>ESN Cyprus</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/cz.png" alt="Flag of Czech Republic"><span>ESN Czech Republic</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/dk.png" alt="Flag of Denmark"><span>ESN Denmark</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ee.png" alt="Flag of Estonia"><span>ESN Estonia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/fi.png" alt="Flag of Finland"><span>ESN Finland</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/fr.png" alt="Flag of France"><span>ESN France</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/de.png" alt="Flag of Germany"><span>ESN Germany</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/gr.png" alt="Flag of Greece"><span>ESN Greece</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/hu.png" alt="Flag of Hungary"><span>ESN Hungary</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ie.png" alt="Flag of Ireland"><span>ESN Ireland</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/it.png" alt="Flag of Italy"><span>ESN Italy</span></div>
+            </div>
+            <div class="see-more-btn">
+                <button onclick="loadMoreCountries()">See More</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 ESN Armenia. <a href="#terms">Terms and Conditions</a> | <a href="#privacy">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        function loadMoreCountries() {
+            const countries = document.getElementById('countries');
+            countries.innerHTML += `
+                <div class="country"><img src="https://flagcdn.com/w320/lv.png" alt="Flag of Latvia"><span>ESN Latvia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/lt.png" alt="Flag of Lithuania"><span>ESN Lithuania</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/lu.png" alt="Flag of Luxembourg"><span>ESN Luxembourg</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/mt.png" alt="Flag of Malta"><span>ESN Malta</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/nl.png" alt="Flag of Netherlands"><span>ESN Netherlands</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/no.png" alt="Flag of Norway"><span>ESN Norway</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/pl.png" alt="Flag of Poland"><span>ESN Poland</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/pt.png" alt="Flag of Portugal"><span>ESN Portugal</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ro.png" alt="Flag of Romania"><span>ESN Romania</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/rs.png" alt="Flag of Serbia"><span>ESN Serbia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/sk.png" alt="Flag of Slovakia"><span>ESN Slovakia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/si.png" alt="Flag of Slovenia"><span>ESN Slovenia</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/es.png" alt="Flag of Spain"><span>ESN Spain</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/se.png" alt="Flag of Sweden"><span>ESN Sweden</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ch.png" alt="Flag of Switzerland"><span>ESN Switzerland</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/ua.png" alt="Flag of Ukraine"><span>ESN Ukraine</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/gb.png" alt="Flag of UK"><span>ESN UK</span></div>
+                <div class="country"><img src="https://flagcdn.com/w320/tr.png" alt="Flag of Türkiye"><span>ESN Türkiye</span></div>
+            `;
+            document.querySelector('.see-more-btn').remove(); // Remove "See More" button
+        }
+    </script>
+</body>
+</html>
